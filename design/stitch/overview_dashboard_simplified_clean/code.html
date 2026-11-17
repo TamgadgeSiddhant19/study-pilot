@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#3525cd",
+            "primary-container": "#4f46e5",
+            background: "#fafafc",
+            surface: "#ffffff"
+          },
+          fontFamily: {
+            sans: ["Geist", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#fafafc] font-sans text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+<!-- Minimal Calm Left Sidebar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-white z-50 flex flex-col justify-between border-r border-slate-200/70">
+<div class="flex flex-col flex-1 min-h-0">
+<!-- App Brand Header -->
+<div class="h-16 px-6 flex items-center justify-between border-b border-slate-100">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-semibold text-sm shadow-xs">
+            S
+          </div>
+<span class="font-semibold text-slate-900 tracking-tight text-base">StudyPilot</span>
+</div>
+</div>
+<!-- Navigation Links (Notion / Linear style) -->
+<div class="overflow-y-auto flex-1 px-3 py-5">
+<div class="px-3 pb-2 text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+          Menu
+        </div>
+<nav class="space-y-0.5">
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-slate-100/80 text-slate-900 font-medium text-sm transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-indigo-600">dashboard</span>
+<span>Overview</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-slate-400">checklist</span>
+<span>My Study Plan</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-slate-400">account_tree</span>
+<span>Roadmaps</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-slate-400">code</span>
+<span>LeetCode Tracker</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded-full bg-rose-50 text-rose-600 font-medium">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-slate-400">timer</span>
+<span>Focus Sessions</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-slate-400">query_stats</span>
+<span>Progress &amp; Analytics</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 text-sm transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-slate-400">auto_awesome</span>
+<span>AI Study Coach</span>
+</div>
+</a>
+</nav>
+</div>
+</div>
+<!-- User Profile Footer -->
+<div class="p-3 border-t border-slate-100">
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Elena Rostova" class="w-8 h-8 rounded-full object-cover ring-1 ring-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Fq6hRrAoCYZtCZdikQN7qOYMm5WcEIcGsTYZT9VwtJ0o7JwcCPd7qk5_ya-GWKa27EYYX35SRdTLAEtsQJ63nZgouv6mbyg_5rM1gJlDgr8GKka_3quOd5TGdLLVLNWs10O2uF14YVKrlyLutAqm9Xct8Yh_GqUUkXP8W1AEJRaWhaKu5xQaCOO1vNil7dmb64wL2D0doSbP1MWfVlwykdozJupgn0OhBi0NTXWmjHoUpWDKAame"/>
+<div class="min-w-0">
+<div class="text-sm font-medium text-slate-900 truncate">Elena Rostova</div>
+<div class="text-xs text-slate-400 truncate">AI Systems Target</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="pl-64">
+<!-- Clean Minimalist Header -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-white/80 backdrop-blur-md z-40 flex items-center justify-between px-10 border-b border-slate-200/60">
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span class="text-slate-800 font-medium">Dashboard</span>
+<span class="text-slate-300">/</span>
+<span>Wednesday, Oct 24</span>
+</div>
+<div class="flex items-center gap-4">
+<!-- Quick search bar -->
+<div class="relative w-64 hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-2 text-slate-400 text-[18px]">search</span>
+<input class="w-full h-8 pl-9 pr-8 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:bg-white text-slate-700 placeholder:text-slate-400 transition-all" placeholder="Search..." type="text"/>
+<kbd class="absolute right-2 top-1.5 px-1.5 py-0.5 rounded text-[10px] bg-slate-200/60 text-slate-500 font-mono">⌘K</kbd>
+</div>
+<button class="h-8 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Log Problem</span>
+</button>
+<button class="text-slate-400 hover:text-slate-600 p-1 rounded-md transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-16 px-10 max-w-6xl mx-auto">
+<!-- 1. Calm Hero Greeting & Focus Goal Banner -->
+<section class="mb-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200/60">
+<div>
+<h1 class="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
+              Good morning, Elena
+            </h1>
+<p class="text-slate-500 text-sm mt-1">
+              You're making steady progress toward your AI Systems Engineer target (Nov 15).
+            </p>
+</div>
+<!-- Single Clear Primary CTA -->
+<div class="bg-white border border-slate-200/80 rounded-xl p-3.5 px-5 shadow-xs flex items-center gap-4">
+<div class="flex items-center gap-3">
+<span class="text-lg">🎯</span>
+<div>
+<div class="text-[11px] font-medium uppercase tracking-wider text-slate-400">Next Up</div>
+<div class="text-sm font-semibold text-slate-900">Distributed Cache Invalidation</div>
+</div>
+</div>
+<button class="ml-2 h-9 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>Start Focus (45m)</span>
+</button>
+</div>
+</div>
+<!-- 2. Three Clean, Quiet Key Metrics in a Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<!-- Metric 1: Daily Focus Hours -->
+<div class="bg-white border border-slate-200/70 rounded-xl p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500 text-xs font-medium">
+<span>Today's Study Time</span>
+<span class="text-indigo-600 font-semibold">62%</span>
+</div>
+<div class="mt-3 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold tracking-tight text-slate-900">2.5h</span>
+<span class="text-xs text-slate-400">/ 4.0h goal</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 mt-4 overflow-hidden">
+<div class="bg-indigo-600 h-full rounded-full" style="width: 62.5%"></div>
+</div>
+</div>
+<!-- Metric 2: Streak -->
+<div class="bg-white border border-slate-200/70 rounded-xl p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500 text-xs font-medium">
+<span>Daily Consistency</span>
+<span class="text-amber-600 font-medium">Active</span>
+</div>
+<div class="mt-3 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold tracking-tight text-slate-900">19</span>
+<span class="text-xs text-slate-500">days streak</span>
+</div>
+<div class="text-xs text-slate-400 mt-4 flex items-center gap-1">
+<span class="text-emerald-600 font-medium">✓ Personal best achieved</span>
+</div>
+</div>
+<!-- Metric 3: Problems Solved -->
+<div class="bg-white border border-slate-200/70 rounded-xl p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500 text-xs font-medium">
+<span>LeetCode Solved</span>
+<span class="text-emerald-600 font-semibold">+4 this week</span>
+</div>
+<div class="mt-3 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold tracking-tight text-slate-900">18</span>
+<span class="text-xs text-slate-400">problems solved</span>
+</div>
+<div class="text-xs text-slate-400 mt-4">
+<span>5 Easy · 10 Medium · 3 Hard</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Primary Two-Column Working Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- LEFT: Today's Plan (Checklist style, Notion clarity) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-white border border-slate-200/70 rounded-xl p-6 shadow-xs">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h2 class="text-base font-semibold text-slate-900">Today's Schedule</h2>
+<p class="text-xs text-slate-400 mt-0.5">3 blocks planned · 1 completed</p>
+</div>
+<button class="text-xs font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Add task</span>
+</button>
+</div>
+<!-- Task List -->
+<div class="space-y-3">
+<!-- Item 1: Done -->
+<div class="group flex items-start justify-between p-3.5 rounded-lg border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<div class="mt-0.5 w-4 h-4 rounded border border-emerald-500 bg-emerald-500 flex items-center justify-center text-white text-[11px] flex-shrink-0">
+<span class="material-symbols-outlined text-[13px]">check</span>
+</div>
+<div class="min-w-0">
+<p class="text-sm font-medium text-slate-400 line-through truncate">Implement Trie &amp; Prefix Tree in C++</p>
+<div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
+<span>08:30 – 09:30</span>
+<span>·</span>
+<span class="text-slate-500">DSA Practice</span>
+</div>
+</div>
+</div>
+<span class="text-xs text-slate-400 font-medium">Done</span>
+</div>
+<!-- Item 2: Up Next Active -->
+<div class="group flex items-start justify-between p-3.5 rounded-lg border border-indigo-200/80 bg-indigo-50/30 hover:bg-indigo-50/50 transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<div class="mt-0.5 w-4 h-4 rounded border border-indigo-400 bg-white flex items-center justify-center cursor-pointer hover:border-indigo-600 flex-shrink-0"></div>
+<div class="min-w-0">
+<p class="text-sm font-semibold text-slate-900 truncate">RAG Architecture: Multi-vector Retrievers</p>
+<div class="flex items-center gap-2 mt-1 text-xs text-slate-500">
+<span class="font-medium text-indigo-600">10:00 – 11:15</span>
+<span>·</span>
+<span class="text-slate-600">GenAI Roadmap</span>
+</div>
+</div>
+</div>
+<button class="h-7 px-3 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium transition-colors flex items-center gap-1 shadow-2xs">
+<span>Resume</span>
+</button>
+</div>
+<!-- Item 3: Scheduled -->
+<div class="group flex items-start justify-between p-3.5 rounded-lg border border-slate-200/60 hover:border-slate-300 transition-colors bg-white">
+<div class="flex items-start gap-3 min-w-0">
+<div class="mt-0.5 w-4 h-4 rounded border border-slate-300 bg-white flex items-center justify-center cursor-pointer hover:border-slate-400 flex-shrink-0"></div>
+<div class="min-w-0">
+<p class="text-sm font-medium text-slate-800 truncate">Distributed Cache Invalidation &amp; Leases</p>
+<div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
+<span>14:00 – 14:45</span>
+<span>·</span>
+<span class="text-slate-500">System Design</span>
+</div>
+</div>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">45m</span>
+</div>
+<!-- Item 4: Evening -->
+<div class="group flex items-start justify-between p-3.5 rounded-lg border border-slate-200/60 hover:border-slate-300 transition-colors bg-white">
+<div class="flex items-start gap-3 min-w-0">
+<div class="mt-0.5 w-4 h-4 rounded border border-slate-300 bg-white flex items-center justify-center cursor-pointer hover:border-slate-400 flex-shrink-0"></div>
+<div class="min-w-0">
+<p class="text-sm font-medium text-slate-800 truncate">LeetCode #207: Course Schedule (Topological Sort)</p>
+<div class="flex items-center gap-2 mt-1 text-xs text-slate-400">
+<span>16:00 – 16:45</span>
+<span>·</span>
+<span class="text-slate-500">Graphs</span>
+</div>
+</div>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">45m</span>
+</div>
+</div>
+</div>
+<!-- Active Roadmaps (2 clean linear cards) -->
+<div>
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="text-sm font-semibold text-slate-900">Current Roadmaps</h2>
+<a class="text-xs text-indigo-600 hover:text-indigo-700 font-medium" href="#">View all (2)</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Roadmap 1 -->
+<div class="bg-white border border-slate-200/70 rounded-xl p-4 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-xs text-slate-400">
+<span>Career Track</span>
+<span class="font-medium text-slate-700">68%</span>
+</div>
+<h3 class="text-sm font-semibold text-slate-900 mt-1">AI Systems Engineer</h3>
+<p class="text-xs text-slate-500 mt-1 truncate">Vector DBs &amp; Embedding Tradeoffs</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div class="w-24 bg-slate-100 rounded-full h-1">
+<div class="bg-indigo-600 h-1 rounded-full" style="width: 68%"></div>
+</div>
+<a class="text-xs font-medium text-indigo-600 hover:underline" href="#">Continue →</a>
+</div>
+</div>
+<!-- Roadmap 2 -->
+<div class="bg-white border border-slate-200/70 rounded-xl p-4 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-xs text-slate-400">
+<span>Algorithms</span>
+<span class="font-medium text-slate-700">74%</span>
+</div>
+<h3 class="text-sm font-semibold text-slate-900 mt-1">Advanced DSA Patterns</h3>
+<p class="text-xs text-slate-500 mt-1 truncate">Dynamic Programming on Trees</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div class="w-24 bg-slate-100 rounded-full h-1">
+<div class="bg-indigo-600 h-1 rounded-full" style="width: 74%"></div>
+</div>
+<a class="text-xs font-medium text-indigo-600 hover:underline" href="#">Continue →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: Spaced Repetition / Flashcards Due (Calm, Minimal) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-white border border-slate-200/70 rounded-xl p-6 shadow-xs">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="text-base font-semibold text-slate-900">Review Queue</h2>
+<p class="text-xs text-slate-400 mt-0.5">Spaced repetition for long-term retention</p>
+</div>
+<span class="text-xs px-2 py-0.5 rounded-full bg-rose-50 text-rose-600 font-medium">3 due</span>
+</div>
+<!-- Due Items -->
+<div class="space-y-3 mt-4">
+<div class="p-3 rounded-lg border border-slate-100 bg-slate-50/50 flex items-center justify-between">
+<div class="min-w-0 pr-2">
+<div class="text-xs font-semibold text-slate-900 truncate">LC #146: LRU Cache</div>
+<div class="text-[11px] text-rose-600 mt-0.5">Due today · Medium</div>
+</div>
+<button class="h-7 px-2.5 rounded bg-white border border-slate-200 hover:bg-slate-50 text-xs font-medium text-slate-700 shadow-2xs transition-colors">
+                  Review
+                </button>
+</div>
+<div class="p-3 rounded-lg border border-slate-100 bg-slate-50/50 flex items-center justify-between">
+<div class="min-w-0 pr-2">
+<div class="text-xs font-semibold text-slate-900 truncate">LC #42: Trapping Rain Water</div>
+<div class="text-[11px] text-slate-400 mt-0.5">Due tomorrow · Two Pointers</div>
+</div>
+<button class="h-7 px-2.5 rounded bg-white border border-slate-200 hover:bg-slate-50 text-xs font-medium text-slate-700 shadow-2xs transition-colors">
+                  Review
+                </button>
+</div>
+<div class="p-3 rounded-lg border border-slate-100 bg-slate-50/50 flex items-center justify-between">
+<div class="min-w-0 pr-2">
+<div class="text-xs font-semibold text-slate-900 truncate">SysDesign: Cache Invalidation</div>
+<div class="text-[11px] text-slate-400 mt-0.5">Flashcards · 8 cards</div>
+</div>
+<button class="h-7 px-2.5 rounded bg-white border border-slate-200 hover:bg-slate-50 text-xs font-medium text-slate-700 shadow-2xs transition-colors">
+                  Review
+                </button>
+</div>
+</div>
+<button class="w-full mt-4 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-xs font-medium text-slate-700 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>Start 15m Quick Review</span>
+</button>
+</div>
+<!-- Coach Guidance Note (Clean & Subtle) -->
+<div class="bg-white border border-slate-200/70 rounded-xl p-5 shadow-xs">
+<div class="flex items-center gap-2 text-indigo-600 mb-2">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Coach Insight</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              You've maintained steady pace across graph algorithms. For today's session, focus on explaining time-space trade-offs out loud before coding.
+            </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

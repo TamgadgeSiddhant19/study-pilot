@@ -1,0 +1,23 @@
+# Python & Virtualenv
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Environment files
+.env
+.env.local
+
+# Storage & User Documents
+backend/storage/documents/
+storage/documents/
+*.db
+*.sqlite
+*.sqlite3
+
+# Node & Next.js
+node_modules/
+.next/
+out/

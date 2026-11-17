@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed-dim": "#93ccff",
+          "background": "#F8FAFC",
+          "outline": "#64748B",
+          "on-tertiary-fixed": "#002114",
+          "tertiary-fixed-dim": "#68dba9",
+          "tertiary": "#059669",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#dad7ff",
+          "tertiary-container": "#ecfdf5",
+          "secondary-container": "#e0f2fe",
+          "on-tertiary-container": "#065f46",
+          "on-primary-fixed": "#0f0069",
+          "on-primary-fixed-variant": "#3323cc",
+          "inverse-primary": "#c3c0ff",
+          "error": "#dc2626",
+          "surface-container-low": "#ffffff",
+          "surface": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-high": "#f1f5f9",
+          "surface-container": "#f8fafc",
+          "on-secondary-fixed": "#001d31",
+          "surface-tint": "#4f46e5",
+          "error-container": "#fef2f2",
+          "on-secondary-fixed-variant": "#004b73",
+          "on-secondary": "#ffffff",
+          "on-tertiary-fixed-variant": "#005137",
+          "on-surface": "#0f172a",
+          "on-error": "#ffffff",
+          "on-background": "#0f172a",
+          "inverse-on-surface": "#f8fafc",
+          "on-surface-variant": "#475569",
+          "on-error-container": "#991b1b",
+          "secondary": "#0284c7",
+          "surface-bright": "#ffffff",
+          "primary-fixed-dim": "#c3c0ff",
+          "secondary-fixed": "#cce5ff",
+          "primary-fixed": "#e2dfff",
+          "surface-container-highest": "#e2e8f0",
+          "primary-container": "#eef2ff",
+          "inverse-surface": "#1e293b",
+          "on-secondary-container": "#075985",
+          "surface-variant": "#f1f5f9",
+          "surface-dim": "#f8fafc",
+          "outline-variant": "#e2e8f0",
+          "on-tertiary": "#ffffff",
+          "primary": "#4f46e5",
+          "tertiary-fixed": "#85f8c4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.375rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "fontFamily": {
+          "display": ["Geist", "sans-serif"],
+          "headline-lg": ["Geist", "sans-serif"],
+          "body-lg": ["Geist", "sans-serif"],
+          "code-inline": ["JetBrains Mono", "monospace"],
+          "label-mono": ["JetBrains Mono", "monospace"],
+          "body-md": ["Geist", "sans-serif"],
+          "tabular-stat": ["JetBrains Mono", "monospace"],
+          "kbd-shortcut": ["JetBrains Mono", "monospace"],
+          "label-md": ["Geist", "sans-serif"],
+          "headline-sm": ["Geist", "sans-serif"],
+          "label-sm": ["Geist", "sans-serif"],
+          "display-mobile": ["Geist", "sans-serif"],
+          "headline-lg-mobile": ["Geist", "sans-serif"],
+          "headline-md": ["Geist", "sans-serif"],
+          "body-sm": ["Geist", "sans-serif"]
+        }
+      }
+    }
+  };
+</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-white border-r border-[#E2E8F0] z-50 flex flex-col justify-between shadow-sm"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center justify-between border-b border-[#E2E8F0] bg-white/90 backdrop-blur-xl"><div class="flex items-center gap-space-sm"><img alt="StudyPilot AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WcRYNvgANXHPNa3gC2x63T3d60mLLMF3cpcCvKGQGyqS1EbbFykGxm569nWTyu82AOuuQ5KnuOxP7PbswmhIAOW1YOnaR22ayTg1dtJaXD6qXOgJxslX41kesGs0QPmWg833c0aPka9WVeGo3zCoh7UFyU92Jt5Z7RJ0xaSrnSioQv1wKf0XTxTWzrwXcRS9tCG8zvlETnoiIPwOR965IRVVSiODx38Ej1nELRc_wxF_mtXPEWB0tI2u4"/><span class="font-headline-md text-headline-md tracking-tight text-slate-900 font-semibold">StudyPilot</span></div><span class="px-2 py-0.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-label-mono text-[11px] font-semibold uppercase tracking-wider">PRO v2.4</span></div><div class="overflow-y-auto flex-1 px-space-md py-space-sm"><div class="px-space-sm pb-space-xs font-label-mono text-[11px] uppercase text-slate-400 tracking-wider font-semibold">Navigation</div><nav class="space-y-1"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="overview" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div><kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 font-kbd-shortcut text-[10px] text-slate-500">G O</kbd></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-all group bg-indigo-50/80 text-primary font-medium border border-indigo-100" data-path="my-study-plan" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-primary transition-colors text-[20px]">checklist</span><span class="font-body-md text-body-md text-indigo-950 font-semibold">My Study Plan</span></div><kbd class="px-1.5 py-0.5 rounded bg-white border border-indigo-200 font-kbd-shortcut text-[10px] text-indigo-700">G S</kbd></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="career-roadmaps" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">account_tree</span><span class="font-body-md text-body-md">Career Roadmaps</span></div><kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 font-kbd-shortcut text-[10px] text-slate-500">G C</kbd></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="technology-roadmaps" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">terminal</span><span class="font-body-md text-body-md">Technology Roadmaps</span></div><kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 font-kbd-shortcut text-[10px] text-slate-500">G T</kbd></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="leetcode-tracker" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">code</span><span class="font-body-md text-body-md">LeetCode Tracker</span></div><span class="px-2 py-0.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 font-label-mono text-[11px] font-semibold">3 due</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="resource-library" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">collections_bookmark</span><span class="font-body-md text-body-md">Resource Library</span></div><kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 font-kbd-shortcut text-[10px] text-slate-500">G R</kbd></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="focus-sessions" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">timer</span><span class="font-body-md text-body-md">Focus Sessions</span></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200"><span class="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-mono text-[11px] text-emerald-700 font-medium">25:00</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="progress-and-analytics" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">query_stats</span><span class="font-body-md text-body-md">Progress &amp; Analytics</span></div><kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 font-kbd-shortcut text-[10px] text-slate-500">G A</kbd></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="ai-study-coach" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">auto_awesome</span><span class="font-body-md text-body-md">AI Study Coach</span></div><span class="px-1.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-label-mono text-[11px] uppercase font-semibold">Agentic</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all group" data-path="settings-and-preferences" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">tune</span><span class="font-body-md text-body-md">Settings</span></div><kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 font-kbd-shortcut text-[10px] text-slate-500">⌘ ,</kbd></a></nav></div></div><div class="p-space-md bg-slate-50/70 border-t border-[#E2E8F0] flex flex-col gap-space-sm"><div class="p-space-md rounded-xl bg-white border border-[#E2E8F0] shadow-sm flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[16px]">smart_toy</span><span class="font-label-mono text-[11px] text-slate-800 font-semibold">Study Coach Agent</span></div><span class="h-2 w-2 rounded-full bg-emerald-500"></span></div><p class="font-body-sm text-[12px] text-slate-500 truncate">Active context: GenAI &amp; DSA</p><button class="mt-space-xs w-full py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-label-mono text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"><span class="material-symbols-outlined text-[14px]">prompt_suggestion</span>Resume Mentorship</button></div><div class="flex items-center justify-between p-space-sm rounded-xl bg-white border border-[#E2E8F0] hover:bg-slate-50 transition-all cursor-pointer shadow-sm"><div class="flex items-center gap-space-md min-w-0"><div class="relative flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Fq6hRrAoCYZtCZdikQN7qOYMm5WcEIcGsTYZT9VwtJ0o7JwcCPd7qk5_ya-GWKa27EYYX35SRdTLAEtsQJ63nZgouv6mbyg_5rM1gJlDgr8GKka_3quOd5TGdLLVLNWs10O2uF14YVKrlyLutAqm9Xct8Yh_GqUUkXP8W1AEJRaWhaKu5xQaCOO1vNil7dmb64wL2D0doSbP1MWfVlwykdozJupgn0OhBi0NTXWmjHoUpWDKAame"/><span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white"></span></div><div class="min-w-0"><div class="font-body-sm text-[12px] font-semibold text-slate-900 truncate">Elena Rostova</div><div class="font-body-sm text-slate-500 truncate text-[11px]">AI Systems Fellow</div></div></div><button class="text-slate-400 hover:text-slate-700 p-1 rounded-lg transition-colors"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-white/95 backdrop-blur-xl border-b border-[#E2E8F0] z-40 flex items-center justify-between px-gutter-lg shadow-sm"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-mono text-xs text-slate-400"><span class="text-slate-500 font-body-sm text-body-sm">Workspace</span><span>/</span><span class="text-slate-900 font-body-sm text-body-sm font-semibold">Active Flight</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 font-label-mono text-xs text-emerald-700 font-medium"><span class="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-ping"></span>Live Focus Mode</div></div><div class="flex-1 max-w-lg mx-space-xl"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-slate-400 text-[18px]">search</span><input class="w-full h-9 pl-9 pr-14 rounded-lg bg-slate-50 border border-[#E2E8F0] text-slate-900 placeholder:text-slate-400 font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:bg-white transition-all shadow-inner" placeholder="Search concepts, roadmaps, problems..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 rounded bg-white border border-slate-200 text-slate-500 font-kbd-shortcut text-[10px]">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><button class="h-9 px-space-md rounded-lg bg-indigo-600 text-white font-body-md text-body-md font-medium hover:bg-indigo-700 flex items-center gap-1.5 transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">add</span><span>Log Solved</span></button><button class="relative p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors border border-slate-200/60"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-rose-500"></span></button><button class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors border border-slate-200/60"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-slate-200 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Fq6hRrAoCYZtCZdikQN7qOYMm5WcEIcGsTYZT9VwtJ0o7JwcCPd7qk5_ya-GWKa27EYYX35SRdTLAEtsQJ63nZgouv6mbyg_5rM1gJlDgr8GKka_3quOd5TGdLLVLNWs10O2uF14YVKrlyLutAqm9Xct8Yh_GqUUkXP8W1AEJRaWhaKu5xQaCOO1vNil7dmb64wL2D0doSbP1MWfVlwykdozJupgn0OhBi0NTXWmjHoUpWDKAame"/></div></div></header><main class="relative pt-16 bg-[#F8FAFC] min-h-screen"><div class="flex flex-col w-full">
+<div class="px-gutter-lg pt-space-lg pb-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-2xl font-bold tracking-tight text-slate-900">Study Plan &amp; Calendar</span>
+<span class="px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-label-mono text-[11px] font-semibold uppercase tracking-wider">Flight Plan</span><div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50/70 border border-amber-200/70 font-label-mono text-[11px] text-amber-800"><span class="material-symbols-outlined text-amber-600 text-[14px]">local_fire_department</span><span class="font-bold">19-Day Streak</span><span class="text-slate-400">·</span><span class="text-emerald-700 font-semibold">Active Today</span><span class="text-slate-400">·</span><span class="text-amber-700 font-medium">Record: 19d</span></div>
+</div>
+<p class="font-body-md text-sm text-slate-600 mt-0.5">Manage time-blocked study sessions, sync milestones, and carry forward tasks.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-8 px-space-md rounded-lg bg-white border border-[#E2E8F0] hover:bg-slate-50 text-slate-700 font-label-mono text-[12px] font-medium flex items-center gap-1.5 transition-colors shadow-sm" id="carry-btn">
+<span class="material-symbols-outlined text-sky-600 text-[16px]">history_edu</span>
+<span>Carry Forward Unfinished</span>
+<span class="px-1.5 py-0.2 rounded-full bg-sky-100 text-sky-800 font-label-mono text-[11px] font-bold">1</span>
+</button>
+<button class="h-8 px-space-md rounded-lg bg-white border border-[#E2E8F0] hover:bg-slate-50 text-slate-700 font-label-mono text-[12px] font-medium flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Sync Calendar</span>
+</button>
+<button class="h-8 px-space-md rounded-lg bg-indigo-600 text-white font-label-mono text-[12px] font-semibold hover:bg-indigo-700 flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add_alarm</span>
+<span>+ Add Study Block</span>
+<kbd class="px-1.5 py-0.5 rounded bg-indigo-700/60 text-white font-kbd-shortcut text-[10px]">B</kbd>
+</button>
+</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white border border-[#E2E8F0] flex flex-col xl:flex-row xl:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center p-0.5 rounded-lg bg-slate-100 border border-slate-200/80">
+<button class="px-3 py-1 rounded font-body-sm text-xs text-slate-600 hover:text-slate-900 transition-colors">Day</button>
+<button class="px-3 py-1 rounded bg-white text-slate-900 font-body-sm text-xs font-semibold shadow-sm border border-slate-200/60">Week</button>
+<button class="px-3 py-1 rounded font-body-sm text-xs text-slate-600 hover:text-slate-900 transition-colors">Month</button>
+<button class="px-3 py-1 rounded font-body-sm text-xs text-slate-600 hover:text-slate-900 transition-colors">List</button>
+</div>
+<div class="flex items-center gap-space-xs bg-slate-50 border border-[#E2E8F0] px-2 py-1 rounded-lg">
+<button class="p-1 rounded text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-label-mono text-xs font-semibold text-slate-800 px-1.5">Week 43 · Oct 21 – Oct 27, 2024</span>
+<button class="p-1 rounded text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="ml-1 px-2.5 py-0.5 rounded bg-indigo-50 border border-indigo-200 text-indigo-700 font-label-mono text-xs font-semibold hover:bg-indigo-100 transition-colors">Today</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm font-label-mono text-xs">
+<div class="flex items-center gap-1.5 bg-slate-50 border border-[#E2E8F0] px-2.5 py-1 rounded-lg">
+<span class="text-slate-500 font-medium">Roadmap:</span>
+<select class="bg-transparent text-slate-900 font-semibold outline-none cursor-pointer">
+<option class="bg-white">All Roadmaps</option>
+<option class="bg-white">AI Engineer</option>
+<option class="bg-white">DSA Masterclass</option>
+<option class="bg-white">System Design</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 bg-slate-50 border border-[#E2E8F0] px-2.5 py-1 rounded-lg">
+<span class="text-slate-500 font-medium">Priority:</span>
+<select class="bg-transparent text-slate-900 font-semibold outline-none cursor-pointer">
+<option class="bg-white">All (P0-P2)</option>
+<option class="bg-white">P0 Urgent</option>
+<option class="bg-white">P1 Standard</option>
+<option class="bg-white">P2 Background</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 bg-slate-50 border border-[#E2E8F0] px-2.5 py-1 rounded-lg">
+<span class="text-slate-500 font-medium">Status:</span>
+<select class="bg-transparent text-slate-900 font-semibold outline-none cursor-pointer">
+<option class="bg-white">All Statuses</option>
+<option class="bg-white">Scheduled</option>
+<option class="bg-white">Completed</option>
+</select>
+</div>
+<div class="h-4 w-px bg-slate-300 mx-0.5"></div>
+<kbd class="px-2 py-1 rounded bg-slate-100 border border-slate-200 text-slate-600 font-kbd-shortcut text-[10px] font-semibold">⌘T FOR TIMELINE</kbd>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<div class="xl:col-span-9 bg-white border border-[#E2E8F0] rounded-xl overflow-hidden flex flex-col shadow-sm">
+<div class="grid grid-cols-8 bg-slate-50/90 border-b border-[#E2E8F0] py-2.5 px-space-md text-center items-center"><div class="font-label-mono text-[11px] uppercase text-slate-400 font-semibold text-left pl-2">Time (UTC)</div><div class="font-label-mono text-xs text-slate-600 flex flex-col items-center group relative"><div class="flex items-center gap-1"><span class="text-slate-400 font-medium">MON</span><span class="material-symbols-outlined text-amber-600 text-[13px]" title="Streak day">local_fire_department</span></div><span class="font-bold text-slate-800 text-sm">21</span><span class="text-[9px] text-emerald-700 font-semibold">Met ✓</span></div><div class="font-label-mono text-xs text-slate-600 flex flex-col items-center group relative"><div class="flex items-center gap-1"><span class="text-slate-400 font-medium">TUE</span><span class="material-symbols-outlined text-amber-600 text-[13px]" title="Streak day">local_fire_department</span></div><span class="font-bold text-slate-800 text-sm">22</span><span class="text-[9px] text-emerald-700 font-semibold">Met ✓</span></div><div class="font-label-mono text-xs text-white flex flex-col items-center bg-indigo-600 rounded-lg py-1 shadow-sm px-1"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-amber-600 text-[13px]">local_fire_department</span><span class="font-bold text-[10px] text-indigo-100 uppercase tracking-wider">DAY 19 ACTIVE</span></div><span class="font-bold text-sm leading-tight">23 · TODAY</span><span class="text-[9px] text-emerald-600 font-medium">Goal Achieved</span></div><div class="font-label-mono text-xs text-slate-600 flex flex-col items-center"><div class="flex items-center gap-1"><span class="text-slate-400 font-medium">THU</span><span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span></div><span class="font-bold text-slate-800 text-sm">24</span><span class="text-[9px] text-slate-400">Upcoming</span></div><div class="font-label-mono text-xs text-slate-600 flex flex-col items-center"><div class="flex items-center gap-1"><span class="text-slate-400 font-medium">FRI</span><span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span></div><span class="font-bold text-slate-800 text-sm">25</span><span class="text-[9px] text-slate-400">Upcoming</span></div><div class="font-label-mono text-xs text-slate-600 flex flex-col items-center"><div class="flex items-center gap-1"><span class="text-slate-400 font-medium">SAT</span><span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span></div><span class="font-bold text-slate-800 text-sm">26</span><span class="text-[9px] text-slate-400">Weekend</span></div><div class="font-label-mono text-xs text-slate-600 flex flex-col items-center"><div class="flex items-center gap-1"><span class="text-slate-400 font-medium">SUN</span><span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span></div><span class="font-bold text-slate-800 text-sm">27</span><span class="text-[9px] text-slate-400">Weekend</span></div></div>
+<div class="relative overflow-x-auto min-h-[760px] bg-white">
+<div class="grid grid-cols-8 absolute inset-0 pointer-events-none divide-x divide-[#E2E8F0]/60">
+<div class="bg-slate-50/40"></div>
+<div class="bg-transparent"></div>
+<div class="bg-transparent"></div>
+<div class="bg-indigo-50/20"></div>
+<div class="bg-transparent"></div>
+<div class="bg-transparent"></div>
+<div class="bg-transparent"></div>
+<div class="bg-transparent"></div>
+</div>
+<div class="flex flex-col divide-y divide-[#E2E8F0]">
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">07:00</span>
+<div class="col-span-7"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">08:00</span>
+<div class="col-span-2"></div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-2 h-12 bg-emerald-50/90 border-l-4 border-l-emerald-600 border border-emerald-200/70 rounded-md p-1.5 flex flex-col justify-between hover:shadow-md transition-all pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-emerald-800 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">check_circle</span> 08:30
+</span>
+<span class="text-emerald-700/80 font-label-mono text-[10px]">60m</span>
+</div>
+<span class="font-body-sm text-xs font-semibold text-slate-900 truncate">Trie &amp; Prefix Tree (C++)</span>
+</div>
+</div>
+<div class="col-span-4"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">09:00</span>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-16 bg-sky-50/90 border-l-4 border-l-sky-600 border border-sky-200/70 rounded-md p-1.5 flex flex-col justify-between hover:shadow-md transition-all pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-sky-800 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-sky-600">done_all</span> Mon 09:00
+</span>
+<span class="text-sky-700/80 font-label-mono text-[10px]">90m</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 truncate font-semibold">DSA: Sliding Window</span>
+<div class="flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+<span class="text-[10px] text-slate-600 truncate font-medium">DSA Track · P0</span>
+</div>
+</div>
+</div>
+<div class="col-span-6"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">10:00</span>
+<div></div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-24 bg-indigo-50/90 border-l-4 border-l-indigo-600 border border-indigo-200/70 rounded-md p-1.5 flex flex-col justify-between hover:shadow-md transition-all pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-indigo-900 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-indigo-600">check_circle</span> Tue 10:00
+</span>
+<span class="text-indigo-700/80 font-label-mono text-[10px]">120m</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-semibold truncate">LangChain vs LlamaIndex</span>
+<div class="flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-indigo-600"></span>
+<span class="text-[10px] text-slate-600 truncate font-medium">GenAI Architect</span>
+</div>
+</div>
+</div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-20 bg-indigo-50 border-l-4 border-l-indigo-600 border border-indigo-200 rounded-md p-2 flex flex-col justify-between shadow-sm hover:shadow-md transition-all pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-indigo-800 font-bold flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-indigo-600 animate-ping"></span> Live Block
+</span>
+<span class="px-1.5 py-0.5 rounded bg-indigo-600 text-white font-label-mono text-[9px] font-bold">10:00 - 11:30</span>
+</div>
+<div>
+<span class="font-body-sm text-xs text-slate-900 font-bold block truncate">RAG Architecture: Hybrid Retrieval</span>
+<span class="text-slate-600 text-[10px] font-medium">Sparse BM25 + Dense Re-ranker</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-emerald-700 font-semibold">Focused · 42m elapsed</span>
+<span class="material-symbols-outlined text-indigo-500 text-[14px]">open_in_new</span>
+</div>
+</div>
+</div>
+<div class="col-span-4"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">11:00</span>
+<div class="col-span-7"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">12:00</span>
+<div class="col-span-7">
+<div class="h-7 mt-3 mx-1 rounded bg-slate-100/80 border border-dashed border-slate-300 flex items-center justify-center font-label-mono text-xs text-slate-600 gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-amber-600">lunch_dining</span>
+<span class="font-medium">Recalibration &amp; Lunch Interval</span>
+</div>
+</div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">13:00</span>
+<div class="col-span-7"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">14:00</span>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-16 bg-emerald-50/80 border-l-4 border-l-emerald-600 border border-emerald-200/60 rounded-md p-1.5 flex flex-col justify-between pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-emerald-800 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-600">done</span> Mon 14:00
+</span>
+<span class="text-emerald-700/80 text-[10px] font-label-mono">90m</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 truncate font-semibold">FastAPI Microservices</span>
+<span class="text-[10px] text-slate-500 font-medium">Backend Core</span>
+</div>
+</div>
+<div></div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-14 bg-sky-50 border-l-4 border-l-sky-600 border border-sky-200 rounded-md p-1.5 flex flex-col justify-between hover:shadow-md transition-all pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 font-label-mono text-[9px] font-bold">UP NEXT</span>
+<span class="text-sky-700 text-[10px] font-label-mono">60m</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-semibold truncate">System Design: Dist. Caches</span>
+</div>
+</div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-20 bg-amber-50/70 border-l-4 border-l-amber-500 border border-amber-200/70 rounded-md p-1.5 flex flex-col justify-between pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="text-[9px] font-label-mono text-amber-800 font-bold">PLANNED · THU</span>
+<span class="text-[9px] text-amber-700 font-label-mono">14:00</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-semibold truncate">Deep Work: KV Store Engine</span>
+<span class="text-[10px] text-slate-500">Open optimal slot</span>
+</div>
+</div>
+<div class="col-span-3"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">15:00</span>
+<div class="col-span-7"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">16:00</span>
+<div></div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-14 bg-slate-100 border-l-4 border-l-slate-400 border border-slate-200 rounded-md p-1.5 flex flex-col justify-between pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] text-slate-700 font-bold">Completed</span>
+<span class="text-slate-500 text-[10px] font-label-mono">60m</span>
+</div>
+<span class="font-body-sm text-xs text-slate-800 truncate font-semibold">Mock Screen: Trees</span>
+</div>
+</div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-3 h-14 bg-indigo-50/90 border-l-4 border-l-indigo-600 border border-indigo-200/80 rounded-md p-1.5 flex flex-col justify-between hover:shadow-md transition-all pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[9px] text-indigo-900 font-bold">16:30 - 17:30</span>
+<span class="text-indigo-700 text-[10px] font-bold">P0</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-semibold truncate">Graph Topo Sort Practice</span>
+</div>
+</div>
+<div></div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-14 bg-slate-50 border-l-4 border-l-slate-400 border border-slate-200 rounded-md p-1.5 flex flex-col justify-between pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="text-[9px] font-label-mono text-slate-700 font-bold">PLANNED · FRI</span>
+<span class="text-[9px] text-slate-500 font-label-mono">16:00</span>
+</div>
+<span class="font-body-sm text-xs text-slate-800 font-semibold truncate">Weekly Sprint Retrospective</span>
+</div>
+</div>
+<div class="col-span-2"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">17:00</span>
+<div class="col-span-7"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">18:00</span>
+<div class="col-span-5"></div>
+<div class="relative h-full">
+<div class="absolute inset-x-1 top-0 h-14 bg-purple-50 border-l-4 border-l-purple-600 border border-purple-200 rounded-md p-1.5 flex flex-col justify-between pointer-events-auto">
+<div class="flex items-center justify-between">
+<span class="text-[9px] font-label-mono text-purple-800 font-bold">WEEKEND LAB</span>
+<span class="text-[9px] text-purple-700 font-label-mono">18:00</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-semibold truncate">K8s Pod Operator Demo</span>
+</div>
+</div>
+<div></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">19:00</span>
+<div class="col-span-7"></div>
+</div>
+<div class="h-14 grid grid-cols-8 items-start relative px-space-md bg-slate-50/30">
+<span class="font-label-mono text-xs text-slate-400 pt-1 pl-2 font-medium">20:00</span>
+<div class="col-span-7"></div>
+</div>
+</div>
+<div class="absolute top-[232px] left-0 right-0 pointer-events-none flex items-center z-20">
+<div class="w-1/8 flex items-center justify-end pr-2">
+<span class="font-label-mono text-[10px] text-white font-bold bg-[#4F46E5] px-1.5 py-0.5 rounded shadow">10:42 AM</span>
+</div>
+<div class="flex-1 h-[2px] bg-[#4F46E5] relative shadow-sm">
+<span class="absolute -top-1 left-[37.5%] h-2.5 w-2.5 rounded-full bg-[#4F46E5] ring-4 ring-indigo-200"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-3 flex flex-col gap-space-md">
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-indigo-600 text-[18px]">inbox</span>
+<span class="font-headline-md text-base font-bold text-slate-900">Unscheduled Backlog</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-label-mono text-xs font-semibold">4 items</span>
+</div>
+<p class="font-body-sm text-xs text-slate-500">Drag tasks directly into the timetable grid to lock your study block.</p>
+<div class="relative my-space-xs">
+<input class="w-full h-8 pl-3 pr-10 rounded-lg bg-slate-50 border border-[#E2E8F0] text-slate-900 placeholder:text-slate-400 font-body-sm text-xs focus:outline-none focus:ring-1 focus:ring-primary focus:bg-white shadow-inner" placeholder="+ Add item to backlog... [Enter]" type="text"/>
+<kbd class="absolute right-2 top-2 px-1 py-0.2 rounded bg-white border border-slate-200 text-slate-400 font-kbd-shortcut text-[10px]">↵</kbd>
+</div>
+<div class="flex flex-col gap-space-xs mt-1" id="backlog-container">
+<div class="p-space-sm rounded-lg bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all cursor-grab active:cursor-grabbing flex flex-col gap-1" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-rose-50 border border-rose-200 text-rose-700 font-label-mono text-[9px] font-bold">P0 CRITICAL</span>
+<span class="font-label-mono text-[10px] text-slate-500 font-medium">35 min</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-bold leading-snug">LC #23 Merge k Sorted Lists</span>
+<div class="flex items-center justify-between text-slate-500 text-[11px] pt-0.5 border-t border-slate-100">
+<span class="flex items-center gap-1 font-label-mono text-[10px] text-sky-700 font-medium">
+<span class="material-symbols-outlined text-[13px]">drag_indicator</span> DSA Masterclass
+</span>
+<span class="font-label-mono text-[10px]">Min-Heap Pattern</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all cursor-grab active:cursor-grabbing flex flex-col gap-1" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-indigo-50 border border-indigo-200 text-indigo-700 font-label-mono text-[9px] font-bold">P1 IMPORTANT</span>
+<span class="font-label-mono text-[10px] text-slate-500 font-medium">45 min</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-bold leading-snug">Read Paper: Attention Is All You Need (Sec 3-5)</span>
+<div class="flex items-center justify-between text-slate-500 text-[11px] pt-0.5 border-t border-slate-100">
+<span class="flex items-center gap-1 font-label-mono text-[10px] text-indigo-700 font-medium">
+<span class="material-symbols-outlined text-[13px]">drag_indicator</span> AI Engineer
+</span>
+<span class="font-label-mono text-[10px]">Arxiv Ref</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all cursor-grab active:cursor-grabbing flex flex-col gap-1" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-label-mono text-[9px] font-bold">P1</span>
+<span class="font-label-mono text-[10px] text-slate-500 font-medium">20 min</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-bold leading-snug">Flashcards: HTTP/3 &amp; QUIC Protocol</span>
+<div class="flex items-center justify-between text-slate-500 text-[11px] pt-0.5 border-t border-slate-100">
+<span class="flex items-center gap-1 font-label-mono text-[10px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[13px]">drag_indicator</span> System Design
+</span>
+<span class="font-label-mono text-[10px]">Anki Deck</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-white border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all cursor-grab active:cursor-grabbing flex flex-col gap-1" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-label-mono text-[9px] font-bold">P2 BACKLOG</span>
+<span class="font-label-mono text-[10px] text-slate-500 font-medium">60 min</span>
+</div>
+<span class="font-body-sm text-xs text-slate-900 font-bold leading-snug">Docker Multi-stage Builds for PyTorch</span>
+<div class="flex items-center justify-between text-slate-500 text-[11px] pt-0.5 border-t border-slate-100">
+<span class="flex items-center gap-1 font-label-mono text-[10px] text-slate-700 font-medium">
+<span class="material-symbols-outlined text-[13px]">drag_indicator</span> DevOps / ML
+</span>
+<span class="font-label-mono text-[10px]">Infra Track</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-base font-bold text-slate-900">Plan Efficiency Insights</span>
+<span class="material-symbols-outlined text-indigo-600 text-[18px]">query_stats</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-slate-50 border border-[#E2E8F0]">
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] text-slate-500 uppercase font-semibold tracking-wider">Weekly Planned</span>
+<span class="font-headline-md text-lg font-bold text-slate-900">24.0h</span>
+</div>
+<div class="h-8 w-px bg-slate-200"></div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] text-slate-500 uppercase font-semibold tracking-wider">Completed</span>
+<span class="font-headline-md text-lg font-bold text-emerald-600">16.5h</span>
+</div>
+<div class="h-8 w-px bg-slate-200"></div>
+<div class="flex flex-col">
+<span class="font-label-mono text-[10px] text-slate-500 uppercase font-semibold tracking-wider">Carried Over</span>
+<span class="font-headline-md text-lg font-bold text-sky-600">1.5h</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-mono text-xs">
+<span class="text-slate-600 font-medium">Velocity vs Target</span>
+<span class="text-emerald-700 font-bold">68.75%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-100 border border-slate-200/80 overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 68.75%;"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-amber-50/70 border border-amber-200/70 flex flex-col gap-1.5"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-amber-600 text-[18px]">local_fire_department</span><span class="font-label-mono text-xs font-bold text-amber-900">Daily Consistency</span></div><span class="px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-label-mono text-[10px] font-bold">Active Streak</span></div><div class="flex items-baseline gap-1.5 mt-0.5"><span class="font-headline-md text-2xl font-bold tracking-tight text-slate-900">19</span><span class="text-xs text-slate-600 font-medium">days streak</span><span class="text-[11px] text-emerald-700 font-semibold ml-auto flex items-center gap-0.5"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span>Personal Best</span></div><div class="flex items-center justify-between pt-1 border-t border-amber-200/60 font-label-mono text-[10px] text-slate-600"><span>Streak Freeze: <strong class="text-slate-800">1 Protected</strong></span><span>This Week: <strong class="text-emerald-700">3/3 Days</strong></span></div></div><div class="p-space-sm rounded-lg bg-emerald-50/70 border border-emerald-200/80 flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-emerald-700 text-[18px] shrink-0 mt-0.5">tips_and_updates</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-mono text-xs font-bold text-emerald-900">Schedule Recommendation</span>
+<p class="font-body-sm text-xs text-slate-700">Thursday afternoon has a 2h open window optimal for your Deep Work block.</p>
+<button class="mt-1 self-start font-label-mono text-xs font-semibold text-indigo-700 hover:text-indigo-900 hover:underline flex items-center gap-1">
+<span>Schedule Now</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-slate-50 border border-[#E2E8F0] flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover shrink-0 border border-slate-200" data-alt="High quality minimalist dark-mode software engineer workstation with mechanical keyboard, ultrawide monitor showing code blocks, ambient purple and cyan lighting, sleek tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Y_b39wCZ1A2_SZFHJgYarN0Fs3lnvTECWi_sE3i-JxZ6vWVruQiCNJXuMzZqzMJVTxtD72qniHDdYkh9y4CbLDf9GH3osbLWA8bypHM2kWwShhWDdsamHH7uVAzMAZOSc-qdtYIuY6Bkr1TWa5YTyOWoGaHeVIFQdM48K01mCQ0_g_9qneBayzCDgmSscJFMpbrHUmWtY3FJkHD92NjYfiFyesTnRnbmP5tvgUTIi2JoqN4IE3q2"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-xs text-slate-900 font-bold truncate">Deep Work Audio Mode</span>
+<span class="font-label-mono text-[10px] text-slate-500 truncate">Binaural 40Hz Gamma Focus</span>
+</div>
+<button class="ml-auto p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carryBtn = document.getElementById('carry-btn');
+      if (carryBtn) {
+        carryBtn.addEventListener('click', () => {
+          const badge = carryBtn.querySelector('span:last-child');
+          if (badge) {
+            badge.textContent = '0';
+            carryBtn.classList.add('opacity-50');
+          }
+        });
+      }
+
+      const backlogItems = document.querySelectorAll('#backlog-container > div');
+      backlogItems.forEach(item => {
+        item.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', item.innerText);
+          item.classList.add('opacity-40');
+        });
+        item.addEventListener('dragend', () => {
+          item.classList.remove('opacity-40');
+        });
+      });
+    });
+  </script>
+</div></main></div></body></html>

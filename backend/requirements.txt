@@ -1,0 +1,45 @@
+# ==============================================================================
+# StudyPilot AI — Backend Dependencies (requirements.txt)
+# ==============================================================================
+
+# --- Core Web Framework & Settings ---
+fastapi>=0.110.0,<1.0.0
+uvicorn[standard]>=0.28.0,<1.0.0
+pydantic>=2.6.0,<3.0.0
+pydantic-settings>=2.2.0,<3.0.0
+
+# --- Database, Migrations & Drivers ---
+# Asynchronous SQLAlchemy with greenlet support
+sqlalchemy>=2.0.28,<3.0.0
+greenlet>=3.0.0
+alembic>=1.13.1,<2.0.0
+# Asynchronous PostgreSQL driver for Neon serverless / PostgreSQL
+asyncpg>=0.29.0
+# Asynchronous SQLite driver for local fallback and in-memory test suite
+aiosqlite>=0.20.0
+# Vector similarity search extension for PostgreSQL/Neon
+pgvector>=0.3.0
+
+# --- Authentication, Security & Uploads ---
+argon2-cffi>=23.1.0
+python-jose[cryptography]>=3.3.0
+email-validator>=2.0.0
+python-multipart>=0.0.9
+
+# --- AI, LangChain & Document RAG ---
+# Official Google GenAI Python SDK
+google-genai>=2.33.0
+# LangChain Gemini integration, LangGraph workflow orchestration, and core abstractions
+langchain-core>=1.7.0
+langchain-google-genai>=4.4.2
+langgraph>=1.2.0
+# Document text extraction (PDFs)
+pypdf>=4.0.0
+
+# --- Environment & Configuration ---
+python-dotenv>=1.0.1
+
+# --- Testing & Development ---
+pytest>=8.1.0
+pytest-asyncio>=0.23.5
+httpx>=0.27.0
